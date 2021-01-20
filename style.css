@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --primaryColor: #000000;
+    --secondaryColor: #f85a16;
+    --textBody: #a2a2a2;
+    --cardsColor: #f2f2f2;
+    --backgroundColor: #efefef;
+    --white: #ffffff;
+    --fontFamily: 'Montserrat', sans-serif;
+    --bodyFont: 16px;
+    --transition: .3s ease;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+body {
+    font-size: var(--bodyFont);
+    font-family: var(--fontFamily);
+    color: var(--textBody);
+}
+a {
+    text-decoration: none;
+}
+ul li {
+    list-style-type: none;
+}
+/************************
+navLine
+************************/
+.navLine {
+    background: var(--secondaryColor);
+    padding: 15px 0;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.navLine .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.navLine a {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-left: 20px;
+}
+.navLine a :hover {
+    color: var(--cardsColor);
+}
+/************************
+nav
+************************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+nav .logo {
+    font-size: 3rem;
+    color: var(--secondaryColor);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav ul li a {
+    color: var(--bodyText);
+    font-weight: 600;
+}
+nav ul li a:hover {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+nav .active {
+    background: var(--secondaryColor);
+    padding: 10px;
+    color: var(--white);
+}
