@@ -488,6 +488,18 @@ blog page
 /************************
 Gym Gallery
 ************************/
+.galleryHeader {
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-8.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
 .gymGallery {
     padding: var(--padding);
 }
@@ -555,6 +567,17 @@ Gallery
 /************************
 contact
 ************************/
+.contactHeader {
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
 .contact {
     padding: var(--padding);
 }
