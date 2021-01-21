@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
     --primaryColor: #000000;
@@ -13,6 +13,19 @@
     --transition: .5s ease;
     --padding: 100px 0;
 }
+/************************
+Scrollbar
+************************/
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondaryColor);
+  border-radius: 5px;
+}
+/************************
+Basic style
+************************/
 * {
     margin: 0;
     padding: 0;
@@ -473,6 +486,137 @@ blog page
     font-size: 1rem;
 }
 /************************
+Gym Gallery
+************************/
+.gymGallery {
+    padding: var(--padding);
+}
+
+.gymGallery h2 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.gymGallery p {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/************************
+Gallery
+************************/
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+.gallery article {
+    flex: 1 1 20%;
+    min-height: 400px;
+    margin: 10px;
+    position: relative;
+}
+
+.gallery article img {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.gallery article:nth-child(6) {
+    flex: 1 1 45%;
+}
+
+.gallery article .text {
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+}
+.gallery article .text h4 {
+    text-transform: uppercase;
+    opacity: .5;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+.gallery article .text h3 {
+    font-size: 2rem;
+    margin-top: 10px;
+    font-weight: 400;
+}
+/************************
+contact
+************************/
+.contactInfo {
+    padding: var(--padding);
+}
+.contactInfo .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contactInfo .container article:first-child {
+    flex: 0 0 40%;
+}
+.contactInfo .container article:last-child {
+    flex: 0 0 55%;
+}
+.contactInfo .container article h3 {
+    color: var(--primaryColor);
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+.contactInfo .container article i {
+    color: var(--secondaryColor);
+    font-size: 1.4rem;
+    margin: 0 20px 40px 0;
+}
+.contactInfo .container article:last-child form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+.contactInfo .container article:last-child form input:nth-child(1) {
+    flex: 0 0 48%;
+}
+.contactInfo .container article:last-child form input:nth-child(2) {
+    flex: 0 0 48%;
+}
+.contactInfo .container article:last-child form input:nth-child(3) {
+    flex: 0 0 100%;
+}
+.contactInfo .container article:last-child form input:nth-child(4) {
+    flex: 0 0 100%;
+}
+.contactInfo .container article:last-child form textarea {
+    flex: 0 0 100%;
+}
+.contactInfo .container article:last-child form input, textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: 1px solid var(--textBody);
+    opacity: .5;
+    border-radius: 5px;
+}
+.contactInfo .container article:last-child form .btn {
+    margin: 0;
+    border: 3px solid var(--secondaryColor);
+}
+/************************
 footer
 ************************/
 footer {
@@ -482,7 +626,7 @@ footer {
     height: 70vh;
     background-attachment: fixed;
     padding: 80px 0;
-    
+
 }
 footer section {
     display: flex;
