@@ -614,11 +614,17 @@ contact
 .contact .container article:last-child form input:focus, textarea:focus {
     outline: none !important;
     border: 2px solid var(--secondaryColor);
-    
+    opacity: 1;
 }
 .contact .container article:last-child form .btn {
     margin: 0;
-    border: 3px solid var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+}
+/************************
+map
+************************/
+.map iframe {
+    vertical-align: bottom;
 }
 /************************
 footer
