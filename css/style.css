@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --primaryColor: #000000;
+    --secondaryColor: #f85a16;
+    --textBody: #828282;
+    --cardsColor: #f2f2f2;
+    --backgroundColor: #e9e9e9;
+    --white: #ffffff;
+    --priceColor: #5bc0de;
+    --fontFamily: 'Montserrat', sans-serif;
+    --bodyFont: 16px;
+    --transition: .5s ease;
+    --padding: 100px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+body {
+    font-size: var(--bodyFont);
+    font-family: var(--fontFamily);
+    color: var(--textBody);
+}
+a {
+    text-decoration: none;
+}
+ul li {
+    list-style-type: none;
+}
+.btn {
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: var(--secondaryColor);
+    color: var(--white);
+    margin-top: 30px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.btn:hover {
+    background: var(--white);
+    color: var(--secondaryColor);
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--primaryColor);
+    font-weight: 400;
+}
+h2::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    background: var(--secondaryColor);
+    height: 3px;
+    width: 10%;
+}
+/************************
+navLine
+************************/
+.navLine {
+    background: var(--secondaryColor);
+    padding: 10px 0;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+.navLine .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.navLine a {
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-left: 20px;
+}
+.navLine a :hover {
+    color: var(--cardsColor);
+}
+/************************
+nav
+************************/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+nav .logo {
+    font-size: 2.5rem;
+    color: var(--secondaryColor);
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-family: cursive; /*** da se stavi neki drugi font-family na logo ***/
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li {
+    font-size: 1.0rem;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav ul li a {
+    color: var(--bodyText);
+    font-weight: 600;
+}
+nav ul li a:hover {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+nav .active {
+    border-bottom: 4px solid var(--secondaryColor);
+    padding: 10px;
+    color: var(--bodyText);
+}
+nav .active:hover {
+    color: var(--secondaryColor);
+}
+/************************
+header
+************************/
+.mainHeader {
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header h1 {
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    word-spacing: 10px;
+}
+header p {
+    font-size: 1.5rem;
+}
+/************************
+cards
+************************/
+.cards {
+    background: var(--backgroundColor);
+    padding: var(--padding);
+    color: var(--primaryColor);
+}
+.cards .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -140px;
+}
+.cards .card {
+    flex: 0 0 30%;
+    background: var(--white);
+    box-shadow: 0 0 8px var(--textBody);
+    padding: 30px;
+    text-align: center;
+}
+.cards .card i {
+    font-size: 2rem;
+    color: var(--secondaryColor);
+}
+.cards h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 20px;
+}
+.cards h3::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    background: var(--secondaryColor);
+    height: 2px;
+    width: 30%;
+}
+.cards p {
+    line-height: 2;
+}
+.cards .btn {
+    background: transparent;
+    color: var(--secondaryColor);
+    border: 1px solid var(--secondaryColor);
+    font-weight: 600;
+}
+.cards .btn:hover {
+    background: var(--secondaryColor);
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+}
+/************************
+trainers
+************************/
+.trainers {
+    padding: var(--padding);
+}
+.trainers p {
+    text-align: center;
+    line-height: 2;
+    padding-bottom: 100px;
+}
+.trainers h3 {
+    font-size: 1.5rem;
+}
+.trainers h3:hover {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+.trainers img {
+    width: 100%;
+    border-right: 60px solid var(--cardsColor);
+}
+.trainers .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.trainers .col {
+    flex: 0 0 30%;
+    position: relative;
+}
+.trainers .icons {
+    padding: 10px 0;
+    width: 70%;
+    position: absolute;
+    bottom: 4px;
+    background: var(--white);
+}
+.trainers .icons .fa {
+    font-size: 1.3rem;
+    margin-left: 20px;
+    color: var(--primaryColor);
+}
+.trainers .icons .fa:hover{
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+.trainers .name {
+    transform: rotate(270deg);
+    position: absolute;
+    bottom: 50%;
+    right: -15%;
+    text-align: center;
+}
+/************************
+price
+************************/
+.price {
+    padding: var(--padding);
+    background-image:linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)), url(../img/price-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: auto;
+    text-align: center;
+}
+.price h2 {
+    color: var(--white);
+}
+.price>p {
+    line-height: 2;
+    padding-bottom: 100px;
+}
+.price .col h3 {
+    padding-bottom: 40px;
+    font-size: 1.3rem;
+}
+.money {
+    font-size: 3rem;
+    color: var(--primaryColor);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.money .currency {
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.price .row {
+    display: flex;
+    justify-content: space-between;
+}
+.price .col {
+    flex: 0 0 23%;
+    background: var(--cardsColor);
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.price .col p {
+    line-height: 3;
+}
+.price .col p:nth-child(odd) {
+    background: var(--backgroundColor);
+}
+.price .btn {
+    background: var(--priceColor);
+}
+.price .btn:hover {
+    color: var(--white);
+    background: var(--secondaryColor);
+    transition: var(--transition);
+}
+/************************
+testimonials
+************************/
+.testimonials {
+    padding: var(--padding);
+    background: var(--cardsColor);
+}
+.testimonials .item img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 40px auto 20px auto;
+}
+.testimonials .item {
+    margin: auto;
+    text-align: center;
+}
+.testimonials h3 {
+    padding-bottom: 20px;
+}
+.testimonials p {
+    line-height: 2;
+}
+.testimonials a {
+    color: var(--secondaryColor);
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: var(--secondaryColor);
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev{
+    color: var(--secondaryColor);
+    font-size: 1.5rem;
+}
+/************************
+discount
+************************/
+.discount {
+    background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../img/discount.jpg);
+    background-size: cover;
+    object-position: center;
+    padding: var(--padding);
+    text-align: center;
+    text-transform: uppercase;
+}
+.discount h2 {
+    padding-bottom: 40px;
+    color: var(--white);
+}
+.discount h2::after {
+    display: none;
+}
+.discount h3 {
+    font-size: 2rem;
+    line-height: 1.5;
+}
+.discount .btn {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+.discount .percent {
+    color: var(--secondaryColor);
+}
+.discount .disc {
+    background: var(--secondaryColor);
+    color: var(--white);
+    padding: 0 5px;
+}
+/************************
+blog page
+************************/
+.blogHeader {
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-8.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.blogHeader h1 {
+    margin-bottom: 30px;
+}
+.blog {
+    background: var(--backgroundColor);
+    padding: 80px 0;
+}
+.blog p {
+    text-align: center;
+    line-height: 2;
+}
+.blog .text p {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.blog .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.blog .row article {
+    flex: 0 0 31%;
+    margin-top: 60px;
+}
+.blog article .featured-image img {
+    width: 100%;
+    display: block;
+}
+.blog article .text {
+    background: var(--white);
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 0 8px var(--textBody);
+    border-radius: 10px;
+    width: 90%;
+    position: relative;
+    top: -40px;
+    right: -35px;
+}
+.blog .text h3 {
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+    margin-bottom: 20px;
+}
+.blog .meta {
+    background: var(--secondaryColor);
+    color: var(--white);
+    padding: 5px 10px;
+    display: inline-block;
+    margin-left: -50px;
+}
+.blog .text p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 20px;
+}
+.blog .text .btn {
+    background: transparent;
+    color: var(--secondaryColor);
+    border: 1px solid var(--secondaryColor);
+    font-weight: 600;
+    padding: 12px 24px;
+}
+.blog .text .btn:hover {
+    background: var(--secondaryColor);
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1rem;
+}
+/************************
+footer
+************************/
+footer {
+    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-7.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    background-attachment: fixed;
+    padding: 80px 0;
+    
+}
+footer section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+footer article {
+    flex: 0 0 30%;
+    text-align: center;
+}
+footer article h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+footer article h3::after {
+    content: "";
+    display: block;
+    margin: 20px auto;
+    background: var(--secondaryColor);
+    height: 2px;
+    width: 30%;
+}
+footer article p {
+    line-height: 1.5;
+    font-size: .9rem;
+}
+footer article ul li a {
+    font-size: .9rem;
+    color: var(--bodyText);
+    line-height: 1.5;
+}
+footer article ul li a:hover {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+footer .btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: .9rem;
+}
+.btn:hover {
+    font-size: .9rem;
+    font-weight: 400;
+}
+footer .bottomLine {
+    text-align: center;
+}
+footer .bottomLine p {
+    margin: 20px 0;
+}
+footer .bottomLine a {
+    color: var(--secondaryColor);
+}
+footer .bottomLine a:hover {
+    color: var(--white);
+}
+footer .bottomLine i {
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+footer .bottomLine i:hover {
+    color: var(--white);
+    transition: var(--transition);
+}
