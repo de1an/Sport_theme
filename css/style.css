@@ -257,12 +257,12 @@ trainers
     bottom: 4px;
     background: var(--white);
 }
-.trainers .icons .fa {
+.trainers .icons .fab {
     font-size: 1.3rem;
     margin-left: 20px;
     color: var(--primaryColor);
 }
-.trainers .icons .fa:hover{
+.trainers .icons .fab:hover{
     color: var(--secondaryColor);
     transition: var(--transition);
 }
@@ -520,7 +520,6 @@ Gallery
 
 .gallery article {
     flex: 1 1 20%;
-    min-height: 400px;
     margin: 10px;
     position: relative;
 }
@@ -556,55 +555,55 @@ Gallery
 /************************
 contact
 ************************/
-.contactInfo {
+.contact {
     padding: var(--padding);
 }
-.contactInfo .container {
+.contact .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.contactInfo .container article:first-child {
+.contact .container article:first-child {
     flex: 0 0 40%;
 }
-.contactInfo .container article:last-child {
+.contact .container article:last-child {
     flex: 0 0 55%;
 }
-.contactInfo .container article h3 {
+.contact .container article h3 {
     color: var(--primaryColor);
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: 30px;
 }
-.contactInfo .container article i {
+.contact .container article i {
     color: var(--secondaryColor);
     font-size: 1.4rem;
     margin: 0 20px 40px 0;
 }
-.contactInfo .container article:last-child form {
+.contact .container article:last-child form {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap; 
 }
-.contactInfo .container article:last-child form input:nth-child(1) {
+.contact .container article:last-child form input:nth-child(1) {
     flex: 0 0 48%;
 }
-.contactInfo .container article:last-child form input:nth-child(2) {
+.contact .container article:last-child form input:nth-child(2) {
     flex: 0 0 48%;
 }
-.contactInfo .container article:last-child form input:nth-child(3) {
+.contact .container article:last-child form input:nth-child(3) {
     flex: 0 0 100%;
 }
-.contactInfo .container article:last-child form input:nth-child(4) {
+.contact .container article:last-child form input:nth-child(4) {
     flex: 0 0 100%;
 }
-.contactInfo .container article:last-child form textarea {
+.contact .container article:last-child form textarea {
     flex: 0 0 100%;
 }
-.contactInfo .container article:last-child form input, textarea {
+.contact .container article:last-child form input, textarea {
     margin-bottom: 20px;
     padding: 15px;
     font-size: 1.1rem;
@@ -612,7 +611,12 @@ contact
     opacity: .5;
     border-radius: 5px;
 }
-.contactInfo .container article:last-child form .btn {
+.contact .container article:last-child form input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid var(--secondaryColor);
+    
+}
+.contact .container article:last-child form .btn {
     margin: 0;
     border: 3px solid var(--secondaryColor);
 }
