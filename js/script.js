@@ -2,6 +2,7 @@ $(document).ready(function() {
   $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
+    autoplaySpeed: 1000,
     autoplay: true,
     responsive: {
       0: {
@@ -25,7 +26,7 @@ $(document).ready(function() {
     }
   })
 
-  $('.col').mouseenter(function () {
+  $('.cena').mouseenter(function () {
         $(this).css({
             border: "0px solid #f85a16"
         }).animate({
