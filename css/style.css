@@ -83,9 +83,10 @@ navLine
 ************************/
 .navLine {
     background: var(--secondaryColor);
-    padding: 10px 0;
+    padding: 5px 0;
     color: var(--white);
     font-size: 1.2rem;
+    width: 100%;
 }
 .navLine .container {
     display: flex;
@@ -104,6 +105,10 @@ navLine
 nav
 ************************/
 nav {
+    position: fixed;
+    width: 100%;
+}
+nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,11 +147,20 @@ nav .active {
 nav .active:hover {
     color: var(--secondaryColor);
 }
+.stickyAdd {
+    background: rgba(255,255,255,.9);
+    box-shadow: 0 0 20px var(--textBody);
+    z-index: 999;
+    width: 100%;
+}
+.stickyAdd .navLine {
+    display: none;
+}
 /************************
 header
 ************************/
 .mainHeader {
-    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-1.jpg);
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-1.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -239,7 +253,7 @@ trainers
 }
 .trainers img {
     width: 100%;
-    border-right: 60px solid var(--cardsColor);
+    border-bottom: 60px solid var(--cardsColor);
 }
 .trainers .row {
     display: flex;
@@ -252,25 +266,27 @@ trainers
 }
 .trainers .icons {
     padding: 10px 0;
-    width: 70%;
+    width: 100%;
     position: absolute;
-    bottom: 4px;
+    top: 22%;
+    left: 49%;
     background: var(--white);
+    transform: rotate(270deg);
+    text-align: center;
 }
 .trainers .icons .fab {
-    font-size: 1.3rem;
-    margin-left: 20px;
+    font-size: 1.4rem;
+    margin-left: 30px;
     color: var(--primaryColor);
+    transform: rotate(90deg);
 }
 .trainers .icons .fab:hover{
     color: var(--secondaryColor);
     transition: var(--transition);
 }
 .trainers .name {
-    transform: rotate(270deg);
-    position: absolute;
-    bottom: 50%;
-    right: -15%;
+    position: relative;
+    top: -10%;
     text-align: center;
 }
 /************************
@@ -392,6 +408,9 @@ discount
     text-transform: uppercase;
     font-size: 1.3rem;
 }
+.discount .btn:hover {
+    font-size: 1.3rem;
+}
 .discount .percent {
     color: var(--secondaryColor);
 }
@@ -404,7 +423,7 @@ discount
 blog page
 ************************/
 .blogHeader {
-    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-8.jpg);
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -412,7 +431,7 @@ blog page
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 .blogHeader h1 {
     margin-bottom: 30px;
@@ -486,10 +505,89 @@ blog page
     font-size: 1rem;
 }
 /************************
+singleBlog page
+************************/
+.singleBlog {
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.singleBlog article:first-child {
+    flex: 0 0 70%;
+}
+.singleBlog article:last-child {
+    flex: 0 0 28%;
+}
+.singleBlog article .featured-image img {
+    width: 80%;
+    display: block;
+}
+.singleBlog article .text {
+    background: var(--white);
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 0 8px var(--textBody);
+    border-radius: 10px;
+    width: 90%;
+    position: relative;
+    top: -40px;
+    right: -35px;
+}
+.singleBlog .text h3 {
+    font-size: 2rem;
+    color: var(--primaryColor);
+    margin-bottom: 20px;
+}
+.singleBlog .meta {
+    background: var(--secondaryColor);
+    color: var(--white);
+    padding: 5px 10px;
+    display: inline-block;
+    margin-left: -50px;
+    font-size: 1.2rem;
+}
+.singleBlog .text p {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-top: 20px;
+    line-height: 1.5;
+    color: var(--primaryColor);
+}
+.singleBlog .widget {
+    background: var(--primaryColor);
+    padding: 50px;
+    color: var(--white);
+    box-shadow: 10px 10px var(--secondaryColor);
+    margin-bottom: 40px;
+}
+.singleBlog .widget h3 {
+    font-size: 1.4rem;
+}
+.singleBlog .widget h3::after {
+    content: "";
+    display: block;
+    margin: 15px 0;
+    background: var(--secondaryColor);
+    height: 2px;
+    width: 20%;
+}
+.singleBlog .widget ul li {
+    line-height: 1.5;
+}
+.singleBlog .widget ul li a {
+    color: var(--bodyText);
+    font-size: 1rem;
+}
+.singleBlog .widget ul li a:hover {
+    color: var(--secondaryColor);
+    transition: var(--transition);
+}
+
+/************************
 Gym Gallery
 ************************/
 .galleryHeader {
-    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-8.jpg);
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -497,7 +595,7 @@ Gym Gallery
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 
 .gymGallery {
@@ -568,7 +666,7 @@ Gallery
 contact
 ************************/
 .contactHeader {
-    background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-1.jpg);
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-1.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -576,7 +674,7 @@ contact
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
 }
 .contact {
     padding: var(--padding);
@@ -609,7 +707,7 @@ contact
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 .contact .container article:last-child form input:nth-child(1) {
     flex: 0 0 48%;
@@ -648,6 +746,40 @@ map
 ************************/
 .map iframe {
     vertical-align: bottom;
+}
+/************************
+pricing page
+************************/
+.priceHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-11.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.pricePage {
+    background: var(--backgroundColor);
+}
+.pricePage h2 {
+    color: var(--primaryColor);
+}
+/************************
+trainers page
+************************/
+.trainersHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/blog-2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 /************************
 footer
