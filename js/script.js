@@ -9,7 +9,7 @@ $(document).ready(function() {
         items: 1
       },
       600: {
-        items: 3
+        items: 1
       },
       1000: {
         items: 1
@@ -24,17 +24,27 @@ $(document).ready(function() {
     } else {
       $('.sticky').removeClass('stickyAdd');
     }
-  })
+  });
+    
 
-  $('.cena').mouseenter(function () {
-        $(this).css({
-            border: "0px solid #f85a16"
-        }).animate({
-            borderWidth: '5px',
-        }, 500);
-    }).mouseleave(function () {
-        $(this).animate({
-             borderWidth: '0px',
-        }, 500);
-    });
+//  $('.cena').mouseenter(function () {
+//        $(this).css({
+//            border: "0px solid #f85a16"
+//        }).animate({
+//            borderWidth: '5px',
+//        }, 200);
+//    }).mouseleave(function () {
+//        $(this).animate({
+//             borderWidth: '0px',
+//        }, 500);
+//    });
 });
+
+    function toggleDropdown() {
+        let navbarToggle = document.getElementById('navbar-toggle');
+        if(navbarToggle.className === 'topNav') {
+            navbarToggle.className += ' responsive';
+        } else {
+            navbarToggle.className = 'topNav';
+        }
+    }

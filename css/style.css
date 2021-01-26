@@ -114,12 +114,8 @@ nav .container {
     align-items: center;
     padding: 15px;
 }
-nav .logo {
-    font-size: 2.5rem;
-    color: var(--secondaryColor);
-    font-weight: 800;
-    letter-spacing: 3px;
-    font-family: cursive; /*** da se stavi neki drugi font-family na logo ***/
+nav .active {
+    padding: 0px;
 }
 nav ul {
     display: flex;
@@ -139,6 +135,11 @@ nav ul li a:hover {
     color: var(--secondaryColor);
     transition: var(--transition);
 }
+ul.topNav.responsive li a.active {
+    border-bottom: 2px solid var(--secondaryColor);
+    display: block;
+    width: 80px;
+}
 nav .active {
     border-bottom: 4px solid var(--secondaryColor);
     padding: 10px;
@@ -156,9 +157,42 @@ nav .active:hover {
 .stickyAdd .navLine {
     display: none;
 }
+.dropDownLink {
+    display: none;
+}
 /************************
 header
 ************************/
+.priceHeader,
+.trainersHeader,
+.blogHeader,
+.galleryHeader,
+.contactHeader{
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+}
+.priceHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-7.jpg);
+}
+.trainersHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-6.jpg);
+}
+.blogHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
+}
+.galleryHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-11.jpg);
+}
+.contactHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-5.jpg);
+}
 .mainHeader {
     background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-1.jpg);
     background-position: center;
@@ -244,10 +278,11 @@ trainers
     line-height: 2;
     padding-bottom: 100px;
 }
-.trainers h3 {
+.trainers a h3 {
     font-size: 1.5rem;
+    color: var(--textBody);
 }
-.trainers h3:hover {
+.trainers a h3:hover {
     color: var(--secondaryColor);
     transition: var(--transition);
 }
@@ -263,6 +298,9 @@ trainers
 .trainers .col {
     flex: 0 0 30%;
     position: relative;
+}
+.trainer .col.img-right {
+  order: 2;
 }
 .trainers .icons {
     padding: 10px 0;
@@ -288,6 +326,36 @@ trainers
     position: relative;
     top: -10%;
     text-align: center;
+}
+/************************
+single trainer
+************************/
+.trainer .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.trainer .col:first-child {
+    flex: 0 0 30%;
+}
+.trainer .col:last-child {
+    flex: 0 0 60%;
+    margin-top: 40px;
+}
+.trainer .col p {
+    text-align: left;
+    padding: 20px 0;
+}
+.trainer .col span {
+   color: var(--secondaryColor);
+    font-weight: bold;
+}
+.trainer .col p:last-child {
+    font-weight: bold;
+}
+.trainer .col h4:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 /************************
 price
@@ -332,8 +400,12 @@ price
     background: var(--cardsColor);
     padding: 40px;
     border-radius: 5px;
+    border: 3px solid var(--secondaryColor);
 }
-
+.price .col:hover {
+  transform: scale(1.05);
+  transition: .6s ease;
+}
 .price .col p {
     line-height: 3;
 }
@@ -347,6 +419,7 @@ price
     color: var(--white);
     background: var(--secondaryColor);
     transition: var(--transition);
+    font-size: 1rem;
 }
 /************************
 testimonials
@@ -403,6 +476,7 @@ discount
 .discount h3 {
     font-size: 2rem;
     line-height: 1.5;
+    margin-bottom: 50px;
 }
 .discount .btn {
     text-transform: uppercase;
@@ -422,32 +496,22 @@ discount
 /************************
 blog page
 ************************/
-.blogHeader {
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
 .blogHeader h1 {
     margin-bottom: 30px;
 }
 .blog {
     background: var(--backgroundColor);
-    padding: 80px 0;
+    padding: var(--padding);
 }
 .blog p {
     text-align: center;
     line-height: 2;
 }
 .blog .text p {
-    text-align: center;
-    font-size: 1.2rem;
     line-height: 1.5;
+    font-size: 1rem;
+    text-align: justify;
+    margin: 20px 0 40px 0;
 }
 .blog .row {
     display: flex;
@@ -465,7 +529,7 @@ blog page
 }
 .blog article .text {
     background: var(--white);
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
     text-align: left;
     box-shadow: 0 0 8px var(--textBody);
     border-radius: 10px;
@@ -489,7 +553,7 @@ blog page
 .blog .text p {
     font-size: 1rem;
     text-align: justify;
-    margin-top: 20px;
+    margin: 20px 0 40px 0;
 }
 .blog .text .btn {
     background: transparent;
@@ -508,7 +572,7 @@ blog page
 singleBlog page
 ************************/
 .singleBlog {
-    padding: 80px 0;
+    padding: var(--padding);
     display: flex;
     justify-content: space-between;
 }
@@ -586,27 +650,13 @@ singleBlog page
 /************************
 Gym Gallery
 ************************/
-.galleryHeader {
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
-
 .gymGallery {
     padding: var(--padding);
 }
-
 .gymGallery h2 {
     font-weight: 600;
     font-size: 2rem;
 }
-
 .gymGallery p {
     text-align: center;
     width: 50%;
@@ -615,7 +665,6 @@ Gym Gallery
     font-size: 1.2rem;
     line-height: 1.5;
 }
-
 /************************
 Gallery
 ************************/
@@ -627,17 +676,13 @@ Gallery
     margin: 10px;
     margin-bottom: 100px;
 }
-
 .gallery article {
     flex: 1 1 20%;
     margin: 10px;
     position: relative;
 }
-
 .gallery article img {
     width: 100%;
-    height: 400px;
-    display: block;
 }
 
 .gallery article:nth-child(6) {
@@ -665,17 +710,6 @@ Gallery
 /************************
 contact
 ************************/
-.contactHeader {
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
 .contact {
     padding: var(--padding);
 }
@@ -683,6 +717,7 @@ contact
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 .contact .container article:first-child {
     flex: 0 0 40%;
@@ -709,16 +744,12 @@ contact
     flex-direction: row;
     flex-wrap: wrap;
 }
-.contact .container article:last-child form input:nth-child(1) {
+.contact .container article:last-child form input:nth-child(1),
+.contact .container article:last-child form input:nth-child(2){
     flex: 0 0 48%;
 }
-.contact .container article:last-child form input:nth-child(2) {
-    flex: 0 0 48%;
-}
-.contact .container article:last-child form input:nth-child(3) {
-    flex: 0 0 100%;
-}
-.contact .container article:last-child form input:nth-child(4) {
+.contact .container article:last-child form input:nth-child(3),
+.contact .container article:last-child form input:nth-child(4){
     flex: 0 0 100%;
 }
 .contact .container article:last-child form textarea {
@@ -750,36 +781,11 @@ map
 /************************
 pricing page
 ************************/
-.priceHeader {
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-11.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
 .pricePage {
     background: var(--backgroundColor);
 }
 .pricePage h2 {
     color: var(--primaryColor);
-}
-/************************
-trainers page
-************************/
-.trainersHeader {
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/blog-2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
 }
 /************************
 footer
@@ -788,9 +794,9 @@ footer {
     background-image:linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url(../img/header-7.jpg);
     background-position: center;
     background-size: cover;
-    height: 70vh;
+    height: 80vh;
     background-attachment: fixed;
-    padding: 80px 0;
+    padding: var(--padding);
 
 }
 footer section {
@@ -798,6 +804,10 @@ footer section {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 60px;
+}
+footer img {
+    width: 100px;
+    height: auto;
 }
 footer article {
     flex: 0 0 30%;
@@ -858,4 +868,200 @@ footer .bottomLine i {
 footer .bottomLine i:hover {
     color: var(--white);
     transition: var(--transition);
+}
+footer article:last-child img:hover {
+    opacity: .5;
+    transition: var(--transition);
+    cursor: pointer;
+}
+/************************
+R E S P O N S I V E
+************************/
+@media(max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+       font-size: 1.5rem;
+    }
+    header h1 {
+        color: var(--white);
+        font-size: 2rem;
+        margin: 20px 0;
+    }
+    .navLine {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .nav-link {
+        display: none;
+    }
+    .stickyAdd {
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 0px var(--textBody);
+        height: auto;
+    }
+    .dropDownLink {
+        display: block;
+        font-size: 2rem;
+        color: var(--secondaryColor);
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    nav .container {
+        display: flex;
+        justify-content:flex-end;
+        padding: 0px;
+        width: 100%;
+    }
+    ul.topNav.responsive li.dropDownLink {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    ul.topNav.responsive {
+        flex-direction: column;
+        padding: 0 20px 60px 0px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.8);
+        width: 100%;
+    }
+    ul.topNav.responsive li a.active {
+        border-bottom:none;
+        padding: 5px 0 0 0;
+/*        display: block;*/
+/*        width: 80px;*/
+    }
+    ul.topNav.responsive li {
+        color: var(--secondaryColor);
+        position: relative;
+        top: 60px;
+    }
+    ul.topNav.responsive li a.nav-link {
+        display: block;
+        width: 100px;
+        line-height: 4;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .mainHeader {
+        height: 100vh;
+        padding: 80px 0;
+    }
+    .priceHeader,
+    .trainersHeader,
+    .blogHeader,
+    .galleryHeader,
+    .contactHeader{
+       height: 100vh;
+       padding: 80px 0;
+    }
+    .cards {
+         padding: 80px 0;
+    }
+    .cards .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .cards .card {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .trainers {
+         padding: 80px 0;
+    }
+    .trainers .col {
+        flex: 0 0 100%;
+    }
+    .testimonials {
+       padding: 80px 0;
+    }
+    .price {
+         padding: 80px 0;
+    }
+    .price .row {
+       flex-wrap: wrap;
+    }
+    .price .col {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .discount {
+        padding: 80px 0;
+    }
+    .discount .btn {
+        font-size: 1rem;
+    }
+    footer {
+        height: auto;
+        padding: 80px 0;
+    }
+    footer section {
+       flex-wrap: wrap;
+    }
+    footer article {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .trainers .col {
+        margin-top: 20px;
+    }
+    .trainer .col:first-child {
+        flex: 0 0 100%;
+    }
+    .trainer .col:last-child {
+        flex: 0 0 100%;
+        margin-top: 0px;
+    }
+    .trainer .col p {
+        text-align: justify;
+    }
+    .blog {
+        padding: 80px 0;
+    }
+    .blog .row article {
+        flex: 0 0 100%;
+        margin-top: 20px;
+    }
+    .singleBlog {
+        padding: 80px 0;
+    }
+    .singleBlog article:first-child {
+        flex: 0 0 100%;
+    }
+    .singleBlog article:last-child {
+        display: none;
+    }
+    .gymGallery {
+        padding: 80px 0;
+    }
+    .gallery article {
+        flex: 1 1 100%;
+        margin: 10px 0;
+        position: relative;
+    }
+    .gallery article img {
+        width: 100%;
+    }
+    .gallery article:nth-child(6) {
+        flex: 0 0 100%;
+    }
+    .contact .container article:first-child,
+    .contact .container article:last-child{
+        flex: 0 0 100%;
+    }
+    .contact .container article:last-child form input:nth-child(1),
+    .contact .container article:last-child form input:nth-child(2){
+        flex: 0 0 100%;
+    }
+
 }

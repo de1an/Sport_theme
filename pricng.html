@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- nav -->
-    <nav class="sticky">
+    <nav class="sticky ">
        <!-- navLine -->
         <div class="navLine">
             <div class="container">
@@ -28,14 +28,15 @@
             </div>
         </div>
         <div class="container">
-            <a href="" class="logo">Logo</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trainers.html">Trainers</a></li>
-                <li><a class="active" href="pricng.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <a href="" class="logo"><img src="img/logo2.png" alt=""></a>
+            <ul class="topNav" id="navbar-toggle">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="trainers.html">Trainers</a></li>
+                <li><a class="active nav-link" href="pricng.html">Pricing</a></li>
+                <li><a class="nav-link" href="blog.html">Blog</a></li>
+                <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="dropDownLink"><a onclick="toggleDropdown()" href="javascript:void(0)">&#9776;</a></li>
             </ul>
         </div>
     </nav>
@@ -52,7 +53,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio cum dicta, aut nisi, eum debitis quam? Sint incidunt eum<br>voluptatum voluptatibus iusto! Molestiae, labore, molestias.</p>
         <div class="container">
             <div class="row">
-                <div class="col cena">
+                <div class="col">
                     <h3>Starter</h3>
                     <div class="money">
                     <sup class="currency">$</sup>9
@@ -65,7 +66,7 @@
                     <p>10 Swimming Lesson</p>
                     <button type="button" class="btn">Select Plan</button>
                 </div>
-                <div class="col cena">
+                <div class="col">
                     <h3>Basic</h3>
                      <div class="money">
                     <sup class="currency">$</sup>27
@@ -78,7 +79,7 @@
                     <p>10 Swimming Lesson</p>
                     <button type="button" class="btn">Select Plan</button>
                 </div>
-                <div class="col cena">
+                <div class="col">
                     <h3>Pro</h3>
                      <div class="money">
                     <sup class="currency">$</sup>75
@@ -91,7 +92,7 @@
                     <p>10 Swimming Lesson</p>
                     <button type="button" class="btn">Select Plan</button>
                 </div>
-                <div class="col cena">
+                <div class="col">
                     <h3>Unlimited</h3>
                      <div class="money">
                     <sup class="currency">$</sup>140
@@ -107,10 +108,6 @@
             </div>
         </div>
     </section>
-
-
-
-
 
     <!-- footer -->
     <footer>
@@ -134,15 +131,20 @@
                 </article>
                 <article>
                     <h3>Partners</h3>
-
+                    <img src="img/partner-1.png" alt="">
+                    <img src="img/partner-6.png" alt="">
+                    <img src="img/partner-3.png" alt="">
+                    <img src="img/partner-4.png" alt="">
+                    <img src="img/partner-5%20.png" alt="">
+                    <img src="img/partner-2.png" alt="">
                 </article>
             </section>
             <div class="bottomLine">
                 <p>&copy; 2020. <a href="">WEBFUSION</a></p>
                 <p>
-                    <a href=""><i class="fa fa-facebook-square"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
                 </p>
             </div>
         </div>
