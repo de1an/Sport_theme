@@ -114,6 +114,9 @@ nav .container {
     align-items: center;
     padding: 15px;
 }
+nav .active {
+    padding: 0px;
+}
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -131,6 +134,11 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--secondaryColor);
     transition: var(--transition);
+}
+ul.topNav.responsive li a.active {
+    border-bottom: 2px solid var(--secondaryColor);
+    display: block;
+    width: 80px;
 }
 nav .active {
     border-bottom: 4px solid var(--secondaryColor);
@@ -291,6 +299,9 @@ trainers
     flex: 0 0 30%;
     position: relative;
 }
+.trainer .col.img-right {
+  order: 2;
+}
 .trainers .icons {
     padding: 10px 0;
     width: 100%;
@@ -390,6 +401,10 @@ price
     padding: 40px;
     border-radius: 5px;
     border: 3px solid var(--secondaryColor);
+}
+.price .col:hover {
+  transform: scale(1.05);
+  transition: .6s ease;
 }
 .price .col p {
     line-height: 3;
@@ -853,6 +868,11 @@ footer .bottomLine i {
 footer .bottomLine i:hover {
     color: var(--white);
     transition: var(--transition);
+}
+footer article:last-child img:hover {
+    opacity: .5;
+    transition: var(--transition);
+    cursor: pointer;
 }
 /************************
 R E S P O N S I V E
