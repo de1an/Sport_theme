@@ -149,6 +149,9 @@ nav .active:hover {
 .stickyAdd .navLine {
     display: none;
 }
+.dropDownLink {
+    display: none;
+}
 /************************
 header
 ************************/
@@ -157,7 +160,6 @@ header
 .blogHeader,
 .galleryHeader,
 .contactHeader{
-    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-11.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -167,6 +169,21 @@ header
     align-items: center;
     height: 80vh;
     text-align: center;
+}
+.priceHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-7.jpg);
+}
+.trainersHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-6.jpg);
+}
+.blogHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-8.jpg);
+}
+.galleryHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-11.jpg);
+}
+.contactHeader {
+    background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-5.jpg);
 }
 .mainHeader {
     background-image:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/header-1.jpg);
@@ -855,15 +872,77 @@ R E S P O N S I V E
         font-size: 2rem;
         margin: 20px 0;
     }
+    .navLine {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+    .nav-link {
+        display: none;
+    }
+    .stickyAdd {
+        background: rgba(0,0,0,0);
+        box-shadow: 0 0 0px var(--textBody);
+        height: auto;
+    }
+    .dropDownLink {
+        display: block;
+        font-size: 2rem;
+        color: var(--secondaryColor);
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    nav .container {
+        display: flex;
+        justify-content:flex-end;
+        padding: 0px;
+        width: 100%;
+    }
+    ul.topNav.responsive li.dropDownLink {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+    ul.topNav.responsive {
+        flex-direction: column;
+        padding: 0 20px 60px 0px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0,.8);
+        width: 100%;
+    }
+    ul.topNav.responsive li a.active {
+        border-bottom:none;
+        padding: 5px 0 0 0;
+/*        display: block;*/
+/*        width: 80px;*/
+    }
+    ul.topNav.responsive li {
+        color: var(--secondaryColor);
+        position: relative;
+        top: 60px;
+    }
+    ul.topNav.responsive li a.nav-link {
+        display: block;
+        width: 100px;
+        line-height: 4;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+    }
     .mainHeader {
-        background-attachment: scroll;
+        height: 100vh;
+        padding: 80px 0;
     }
     .priceHeader,
     .trainersHeader,
     .blogHeader,
     .galleryHeader,
     .contactHeader{
-       background-attachment: scroll;
+       height: 100vh;
+       padding: 80px 0;
     }
     .cards {
          padding: 80px 0;

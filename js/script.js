@@ -24,7 +24,8 @@ $(document).ready(function() {
     } else {
       $('.sticky').removeClass('stickyAdd');
     }
-  })
+  });
+    
 
 //  $('.cena').mouseenter(function () {
 //        $(this).css({
@@ -38,3 +39,12 @@ $(document).ready(function() {
 //        }, 500);
 //    });
 });
+
+    function toggleDropdown() {
+        let navbarToggle = document.getElementById('navbar-toggle');
+        if(navbarToggle.className === 'topNav') {
+            navbarToggle.className += ' responsive';
+        } else {
+            navbarToggle.className = 'topNav';
+        }
+    }
