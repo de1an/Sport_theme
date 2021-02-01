@@ -281,6 +281,7 @@ trainers
 .trainers a h3 {
     font-size: 1.5rem;
     color: var(--textBody);
+    margin-bottom: 5px;
 }
 .trainers a h3:hover {
     color: var(--secondaryColor);
@@ -288,44 +289,38 @@ trainers
 }
 .trainers img {
     width: 100%;
-    border-bottom: 60px solid var(--cardsColor);
+    display: block;
 }
 .trainers .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.trainers .col {
+.trainers article {
     flex: 0 0 30%;
     position: relative;
 }
-.trainer .col.img-right {
-  order: 2;
+.trainers .text {
+    background: var(--cardsColor);
+    text-align: center;
+    padding: 10px 0;
 }
 .trainers .icons {
-    padding: 10px 0;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 22%;
-    left: 49%;
+    top: 0;
+    right: 0;
     background: var(--white);
-    transform: rotate(270deg);
-    text-align: center;
 }
 .trainers .icons .fab {
     font-size: 1.4rem;
-    margin-left: 30px;
     color: var(--primaryColor);
-    transform: rotate(90deg);
+    padding: 15px 10px;
 }
 .trainers .icons .fab:hover{
     color: var(--secondaryColor);
     transition: var(--transition);
-}
-.trainers .name {
-    position: relative;
-    top: -10%;
-    text-align: center;
 }
 /************************
 single trainer
@@ -334,26 +329,32 @@ single trainer
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
-.trainer .col:first-child {
+.trainer article:first-child {
     flex: 0 0 30%;
 }
-.trainer .col:last-child {
+.trainer article:last-child {
     flex: 0 0 60%;
-    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.trainer .col p {
+.trainer .img-right {
+    order: 2;
+}
+.trainer article p {
     text-align: left;
     padding: 20px 0;
 }
-.trainer .col span {
+.trainer article span {
    color: var(--secondaryColor);
     font-weight: bold;
 }
-.trainer .col p:last-child {
+.trainer article p:last-child {
     font-weight: bold;
 }
-.trainer .col h4:first-child {
+.trainer article h4:first-child {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -979,7 +980,7 @@ R E S P O N S I V E
     .trainers {
          padding: 80px 0;
     }
-    .trainers .col {
+    .trainers article {
         flex: 0 0 100%;
     }
     .testimonials {
@@ -1012,18 +1013,8 @@ R E S P O N S I V E
         flex: 0 0 100%;
         margin-bottom: 20px;
     }
-    .trainers .col {
+    .trainers article {
         margin-top: 20px;
-    }
-    .trainer .col:first-child {
-        flex: 0 0 100%;
-    }
-    .trainer .col:last-child {
-        flex: 0 0 100%;
-        margin-top: 0px;
-    }
-    .trainer .col p {
-        text-align: justify;
     }
     .blog {
         padding: 80px 0;
@@ -1063,5 +1054,10 @@ R E S P O N S I V E
     .contact .container article:last-child form input:nth-child(2){
         flex: 0 0 100%;
     }
-
+    .trainer .row article {
+        flex: 0 0 100%;
+    }
+    .trainer .img-right {
+        order: 0;
+    }
 }
