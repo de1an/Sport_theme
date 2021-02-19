@@ -83,10 +83,9 @@ navLine
 ************************/
 .navLine {
     background: var(--secondaryColor);
-    padding: 5px 0;
+    padding: 7px 0;
     color: var(--white);
     font-size: 1.2rem;
-    width: 100%;
 }
 .navLine .container {
     display: flex;
@@ -112,53 +111,53 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-}
-nav .active {
-    padding: 0px;
+    padding: 10px 0;
 }
 nav ul {
     display: flex;
     justify-content: space-between;
 }
 nav ul li {
-    font-size: 1.0rem;
+    font-size: 1rem;
     margin-left: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-nav ul li a {
-    color: var(--bodyText);
     font-weight: 600;
 }
 nav ul li a:hover {
     color: var(--secondaryColor);
     transition: var(--transition);
 }
-ul.topNav.responsive li a.active {
-    border-bottom: 2px solid var(--secondaryColor);
-    display: block;
-    width: 80px;
-}
 nav .active {
-    border-bottom: 4px solid var(--secondaryColor);
-    padding: 10px;
-    color: var(--bodyText);
-}
-nav .active:hover {
-    color: var(--secondaryColor);
+    border-bottom: 2px solid var(--secondaryColor);
 }
 .stickyAdd {
-    background: rgba(255,255,255,.9);
-    box-shadow: 0 0 20px var(--textBody);
+    background: rgba(255,255,255,.95);
     z-index: 999;
-    width: 100%;
+    transition: var(--transition);
+    top: 0;
+    left: 0;
 }
-.stickyAdd .navLine {
-    display: none;
+.stickyAdd .container .mainMenu li a {
+    color: var(--textBody);
 }
-.dropDownLink {
+.stickyAdd .container .mainMenu li a:hover {
+    color: var(--secondaryColor);
+}
+nav .mainMenu li a {
+    padding: 5px;
+    color: #fff;
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
     display: none;
+    cursor: pointer;
+}
+nav .mainMenu .closeMenu {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
 }
 /************************
 header
@@ -885,34 +884,27 @@ R E S P O N S I V E
         font-size: 2rem;
     }
     h3 {
-       font-size: 1.5rem;
+        font-size: 1.5rem;
     }
     header h1 {
         color: var(--white);
         font-size: 2rem;
         margin: 20px 0;
     }
-    .navLine {
-        display: none;
+    .navLine .container {
+        width: 100%;
+    }
+    .navLine p {
+        margin-left: 10px;
+    }
+    .navLine .icons {
+        margin-right: 10px;
     }
     .logo {
-        display: none;
-    }
-    .nav-link {
-        display: none;
-    }
-    .stickyAdd {
-        background: rgba(0,0,0,0);
-        box-shadow: 0 0 0px var(--textBody);
-        height: auto;
-    }
-    .dropDownLink {
+        margin: 10px;
         display: block;
-        font-size: 2rem;
-        color: var(--secondaryColor);
+        left: 0;
         position: absolute;
-        right: 20px;
-        top: 10px;
     }
     nav .container {
         display: flex;
@@ -920,37 +912,34 @@ R E S P O N S I V E
         padding: 0px;
         width: 100%;
     }
-    ul.topNav.responsive li.dropDownLink {
-        position: absolute;
-        right: 20px;
-        top: 10px;
-    }
-    ul.topNav.responsive {
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
         flex-direction: column;
-        padding: 0 20px 60px 0px;
-        align-items: center;
         justify-content: center;
-        background: rgba(0,0,0,.8);
-        width: 100%;
+        align-items: center;
+        background: var(--primaryColor);
+        transition: top 1s ease;
+        display: none;
+        line-height: 2.2;
     }
-    ul.topNav.responsive li a.active {
-        border-bottom:none;
-        padding: 5px 0 0 0;
-/*        display: block;*/
-/*        width: 80px;*/
-    }
-    ul.topNav.responsive li {
-        color: var(--secondaryColor);
-        position: relative;
-        top: 60px;
-    }
-    ul.topNav.responsive li a.nav-link {
+    nav .mainMenu .closeMenu {
         display: block;
-        width: 100px;
-        line-height: 4;
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        background: none;
+        color: rgb(255, 123, 0);
+        font-size: 1.6rem;
     }
     .mainHeader {
         height: 100vh;
